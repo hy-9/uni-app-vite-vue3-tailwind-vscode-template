@@ -6,22 +6,22 @@
 
 ## Generated Skills
 
-| Category | File | Description |
-|----------|------|-------------|
-| Core | core-framework.md | Framework basics, platform support, condition compilation |
-| Core | core-view-components.md | Container components: view, scroll-view, swiper, movable-area |
-| Core | core-form-components.md | Form controls: input, textarea, picker, checkbox, radio |
-| Features | feature-media-components.md | Media: image, video, camera, map, live-player |
-| Features | feature-navigation.md | Navigation: navigator, routing APIs |
-| Features | feature-network.md | Network: request, upload, download, WebSocket |
-| Features | feature-storage.md | Storage: localStorage, file system |
-| Features | feature-system-info.md | System: device info, network, screen, vibration |
-| Features | feature-file-operations.md | Files: image/video selection, file operations |
-| Features | feature-location.md | Location: geolocation, map component |
-| Features | feature-ui-feedback.md | UI: toast, modal, loading, action sheet |
-| Features | feature-lifecycle.md | Lifecycle: app and page hooks |
-| Config | config-pages.md | pages.json configuration |
-| Config | config-manifest.md | manifest.json configuration |
+| Category | File                        | Description                                                   |
+| -------- | --------------------------- | ------------------------------------------------------------- |
+| Core     | core-framework.md           | Framework basics, platform support, condition compilation     |
+| Core     | core-view-components.md     | Container components: view, scroll-view, swiper, movable-area |
+| Core     | core-form-components.md     | Form controls: input, textarea, picker, checkbox, radio       |
+| Features | feature-media-components.md | Media: image, video, camera, map, live-player                 |
+| Features | feature-navigation.md       | Navigation: navigator, routing APIs                           |
+| Features | feature-network.md          | Network: request, upload, download, WebSocket                 |
+| Features | feature-storage.md          | Storage: localStorage, file system                            |
+| Features | feature-system-info.md      | System: device info, network, screen, vibration               |
+| Features | feature-file-operations.md  | Files: image/video selection, file operations                 |
+| Features | feature-location.md         | Location: geolocation, map component                          |
+| Features | feature-ui-feedback.md      | UI: toast, modal, loading, action sheet                       |
+| Features | feature-lifecycle.md        | Lifecycle: app and page hooks                                 |
+| Config   | config-pages.md             | pages.json configuration                                      |
+| Config   | config-manifest.md          | manifest.json configuration                                   |
 
 ## Source Documentation Structure
 

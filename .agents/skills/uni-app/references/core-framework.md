@@ -25,18 +25,18 @@ project-root/
 
 ## Platform Support
 
-| Platform | Value | Description |
-|----------|-------|-------------|
-| App | APP-PLUS | iOS/Android native apps |
-| App nvue | APP-PLUS-NVUE | Native rendering pages |
-| H5 | H5 / WEB | Web applications |
-| WeChat Mini Program | MP-WEIXIN | WeChat MP |
-| Alipay | MP-ALIPAY | Alipay MP |
-| Baidu | MP-BAIDU | Baidu Smart Program |
-| Douyin | MP-TOUTIAO | ByteDance MP |
-| QQ | MP-QQ | QQ Mini Program |
-| Kuaishou | MP-KUAISHOU | Kuaishou MP |
-| HarmonyOS | APP-HARMONY | HarmonyOS Next |
+| Platform            | Value         | Description             |
+| ------------------- | ------------- | ----------------------- |
+| App                 | APP-PLUS      | iOS/Android native apps |
+| App nvue            | APP-PLUS-NVUE | Native rendering pages  |
+| H5                  | H5 / WEB      | Web applications        |
+| WeChat Mini Program | MP-WEIXIN     | WeChat MP               |
+| Alipay              | MP-ALIPAY     | Alipay MP               |
+| Baidu               | MP-BAIDU      | Baidu Smart Program     |
+| Douyin              | MP-TOUTIAO    | ByteDance MP            |
+| QQ                  | MP-QQ         | QQ Mini Program         |
+| Kuaishou            | MP-KUAISHOU   | Kuaishou MP             |
+| HarmonyOS           | APP-HARMONY   | HarmonyOS Next          |
 
 ## Condition Compilation
 
@@ -44,63 +44,65 @@ Handle platform differences using special comment syntax:
 
 ```vue
 <template>
-  <view>
-    <!-- #ifdef APP-PLUS -->
-    <text>App only content</text>
-    <!-- #endif -->
+	<view>
+		<!-- #ifdef APP-PLUS -->
+		<text>App only content</text>
+		<!-- #endif -->
 
-    <!-- #ifdef MP-WEIXIN -->
-    <text>WeChat MP only</text>
-    <!-- #endif -->
+		<!-- #ifdef MP-WEIXIN -->
+		<text>WeChat MP only</text>
+		<!-- #endif -->
 
-    <!-- #ifndef H5 -->
-    <text>All platforms except H5</text>
-    <!-- #endif -->
-  </view>
+		<!-- #ifndef H5 -->
+		<text>All platforms except H5</text>
+		<!-- #endif -->
+	</view>
 </template>
 
 <script>
 export default {
-  methods: {
-    getPlatform() {
-      // #ifdef APP-PLUS
-      return 'App'
-      // #endif
-      // #ifdef H5
-      return 'Web'
-      // #endif
-    }
-  }
-}
+	methods: {
+		getPlatform() {
+			// #ifdef APP-PLUS
+			return "App";
+			// #endif
+			// #ifdef H5
+			return "Web";
+			// #endif
+		},
+	},
+};
 </script>
 
 <style>
 /* #ifdef APP-PLUS */
-.app-style { padding: 20px; }
+.app-style {
+	padding: 20px;
+}
 /* #endif */
 </style>
 ```
 
 ## Platform Values Reference
 
-| Value | Description |
-|-------|-------------|
-| VUE3 / VUE2 | Vue version |
-| UNI-APP-X | UniApp X project |
-| APP-PLUS | App (JS engine) |
-| APP-PLUS-NVUE / APP-NVUE | App nvue pages |
-| APP-ANDROID | Android platform |
-| APP-IOS | iOS platform |
-| APP-HARMONY | HarmonyOS Next |
-| H5 / WEB | Web platform |
-| MP-WEIXIN | WeChat Mini Program |
-| MP-ALIPAY | Alipay Mini Program |
-| MP-BAIDU | Baidu Smart Program |
-| MP-TOUTIAO | Douyin Mini Program |
-| MP-LARK | Feishu Mini Program |
-| MP-QQ | QQ Mini Program |
-| MP-KUAISHOU | Kuaishou Mini Program |
-| MP-HARMONY | HarmonyOS Meta Service |
+| Value                    | Description            |
+| ------------------------ | ---------------------- |
+| VUE3 / VUE2              | Vue version            |
+| UNI-APP-X                | UniApp X project       |
+| APP-PLUS                 | App (JS engine)        |
+| APP-PLUS-NVUE / APP-NVUE | App nvue pages         |
+| APP-ANDROID              | Android platform       |
+| APP-IOS                  | iOS platform           |
+| APP-HARMONY              | HarmonyOS Next         |
+| H5 / WEB                 | Web platform           |
+| MP-WEIXIN                | WeChat Mini Program    |
+| MP-ALIPAY                | Alipay Mini Program    |
+| MP-BAIDU                 | Baidu Smart Program    |
+| MP-TOUTIAO               | Douyin Mini Program    |
+| MP-LARK                  | Feishu Mini Program    |
+| MP-QQ                    | QQ Mini Program        |
+| MP-KUAISHOU              | Kuaishou Mini Program  |
+| MP-HARMONY               | HarmonyOS Meta Service |
 
 ## API Promise Support
 
@@ -108,18 +110,18 @@ UniApp APIs support Promise when no callback is provided:
 
 ```javascript
 // Promise style
-uni.request({ url: 'https://api.example.com' })
-  .then(res => console.log(res))
-  .catch(err => console.error(err))
+uni.request({ url: "https://api.example.com" })
+	.then((res) => console.log(res))
+	.catch((err) => console.error(err));
 
 // Async/await
 async function fetchData() {
-  try {
-    const res = await uni.request({ url: 'https://api.example.com' })
-    return res.data
-  } catch (err) {
-    console.error(err)
-  }
+	try {
+		const res = await uni.request({ url: "https://api.example.com" });
+		return res.data;
+	} catch (err) {
+		console.error(err);
+	}
 }
 ```
 

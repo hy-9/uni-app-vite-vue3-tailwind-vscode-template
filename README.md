@@ -1,6 +1,8 @@
 # uni-app-vite-vue3-tailwind-vscode-template
 
 `uni-app + Vite + Vue 3 + Tailwind CSS` 的 VS Code 模板。
+本项目为 [uni-app-vite-vue3-tailwind-vscode-template](https://github.com/sonofmagic/uni-app-vite-vue3-tailwind-vscode-template) 分支。
+添加了Prettier配置、通用api接口封装、自定义Tailwind颜色变量等。
 
 ## 适用场景
 
@@ -15,36 +17,111 @@
 - `Vue 3`
 - `Tailwind CSS v3`
 - `weapp-tailwindcss`
-- `pnpm`
+- `npm`
 
 ## 使用前提
 
 - Node.js `22+`
-- `pnpm`
+- `npm`
 - 微信开发者工具
 
 ## 快速开始
 
 ```bash
-pnpm install
-pnpm dev:mp-weixin
+npm install
+npm run dev:mp-weixin
 ```
 
 如果需要直接打开微信开发者工具：
 
 ```bash
-pnpm open:dev
+npm run open:dev
 ```
 
 ## 常用命令
 
 ```bash
-pnpm dev:mp-weixin
-pnpm build:mp-weixin
-pnpm dev:h5
-pnpm build:h5
-pnpm open:dev
-pnpm open:build
+npm run dev:mp-weixin
+npm run build:mp-weixin
+npm run dev:h5
+npm run build:h5
+npm run open:dev
+npm run open:build
+```
+
+## Tailwind CSS 自定义颜色
+
+项目已配置以下自定义颜色变量，可在 Tailwind 类名中直接使用：
+
+| 颜色名称   | RGB 值       | 说明        |
+| ---------- | ------------ | ----------- |
+| `primary`  | `3 171 146`  | 主色调      |
+| `reminder` | `25 137 250` | 提醒/信息色 |
+| `success`  | `76 217 99`  | 成功色      |
+| `warning`  | `240 173 78` | 警告色      |
+| `error`    | `221 82 77`  | 错误色      |
+
+使用示例：
+
+```vue
+<template>
+	<view class="text-primary">主色调文字</view>
+	<view class="bg-success">成功背景</view>
+	<view class="border-warning border-2">警告边框</view>
+</template>
+```
+
+这些颜色定义在 `src/App.vue` 的 CSS 变量中，并在 `tailwind.config.ts` 中配置为 Tailwind 颜色扩展。
+
+## Prettier 配置
+
+项目已集成 Prettier 和 `prettier-plugin-tailwindcss`，提供统一的代码格式化。
+
+### 配置详情
+
+Prettier 配置位于 `.prettierrc`：
+
+```json
+{
+	"printWidth": 80,
+	"tabWidth": 4,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": false,
+	"trailingComma": "all",
+	"bracketSpacing": true,
+	"arrowParens": "always",
+	"endOfLine": "lf",
+	"vueIndentScriptAndStyle": false,
+	"tailwindConfig": "./tailwind.prettier.config.ts",
+	"plugins": ["prettier-plugin-tailwindcss"]
+}
+```
+
+### 使用命令
+
+```bash
+npm run format        # 格式化所有文件
+npm run format:check  # 检查文件格式（不修改）
+```
+
+### 格式化时机
+
+- 提交前通过 Husky + lint-staged 自动格式化
+- 开发时配合 VS Code Prettier 插件实时格式化
+
+### VS Code 配置建议
+
+在 `.vscode/settings.json` 中添加：
+
+```json
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	}
+}
 ```
 
 ## 模板说明
@@ -52,7 +129,7 @@ pnpm open:build
 - 安装依赖后会自动执行 `weapp-tw patch`
 - 请先把 `src/manifest.json` 中的 `appid` 改成你自己的
 - 模板内保留了 `up:pkg` 和 `up:uniapp`，用于分别升级通用依赖和 `uni-app` 依赖
-- 推荐在 VS Code 中安装 `Tailwind CSS IntelliSense`、`ESLint`、`Stylelint`
+- 推荐在 VS Code 中安装 `Tailwind CSS IntelliSense`、`ESLint`、`Stylelint`、`Prettier`
 
 ## 项目级技能
 
@@ -68,3 +145,5 @@ pnpm open:build
 
 - `weapp-tailwindcss`：<https://tw.icebreaker.top/>
 - `uni-app`：<https://uniapp.dcloud.net.cn/>
+- `Prettier`：<https://prettier.io/>
+- `prettier-plugin-tailwindcss`：<https://github.com/tailwindlabs/prettier-plugin-tailwindcss>
