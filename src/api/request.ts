@@ -41,7 +41,7 @@ interface RequestArguments {
 		| "HEAD"
 		| "OPTIONS"
 		| "TRACE";
-	urlParams?: Record<string, string>;
+	urlParams?: Record<string, any>;
 	data?: any;
 	options?: RequestOptions;
 }
