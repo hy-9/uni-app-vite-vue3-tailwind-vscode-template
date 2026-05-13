@@ -6,6 +6,18 @@
 			"style": {
 				"navigationBarTitleText": "weapp-tailwindcss"
 			}
+		},
+		{
+			"path": "pages/case/list-cache/index",
+			"style": {
+				"navigationBarTitleText": "列表缓存"
+			}
+		},
+		{
+			"path": "pages/case/list-cache/detail",
+			"style": {
+				"navigationBarTitleText": "详情页"
+			}
 		}
 	],
 	"globalStyle": {
