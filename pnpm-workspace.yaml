@@ -1,10 +1,11 @@
 allowBuilds:
-  '@dcloudio/hbuilderx-cli': false
-  '@parcel/watcher': true
-  core-js: true
-  core-js-pure: true
-  esbuild: true
-  vue-demi: true
+    "@dcloudio/hbuilderx-cli": false
+    "@parcel/watcher": true
+    core-js: true
+    core-js-pure: true
+    esbuild: true
+    simple-git-hooks: true
+    vue-demi: true
 onlyBuiltDependencies:
-  - '@weapp-tailwindcss/merge'
+    - "@weapp-tailwindcss/merge"
 minimumReleaseAge: 0
